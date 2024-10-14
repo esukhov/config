@@ -2,6 +2,7 @@ vim.keymap.set("n", "<C-f>", require('fzf-lua').files, { desc = "Fzf Files" })
 vim.keymap.set("n", "<C-g>", require('fzf-lua').grep, { desc = "Fzf grep" })
 vim.keymap.set("n", "<C-k>", require('fzf-lua').builtin, { desc = "Fzf builtin commands" })
 vim.keymap.set("n", "<C-l>", require('fzf-lua').live_grep, { desc = "Fzf livegrep" })
+vim.keymap.set("n", "<M-b>", require('fzf-lua').buffers, { desc = "Fzf buffers" })
 
 -- Set key binding for LSP code action
 vim.g.mapleader = ' '
@@ -14,7 +15,7 @@ local term_opts = { silent = true }
 local keymap = vim.keymap.set
 
 keymap('n', '<M-k>', [[:lua select_word()<cr>]], opts)
-keymap("n", "<M-b>", ":Buffers<CR>", opts)
+--keymap("n", "<M-b>", ":Buffers<CR>", opts)
 keymap("n", "<M-f>", ":Rg <C-r><C-w><cr>", opts)
 keymap("n", "<M-d>", ":lua toggle_diff()<CR>", opts)
 
